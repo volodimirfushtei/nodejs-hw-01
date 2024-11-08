@@ -5,17 +5,14 @@ import { readContacts } from '../utils/readContacts.js';
 const generateContacts = async (number) => {
   const existingContacts = await readContacts();
   try {
-    const newContacts = [];
-    for (let i = 0; i < number; i++) {
-      const contact = createFakeContact();
-      newContacts.push(contact);
-    }
+    const newContacts = Array.from({ length: number }, () =>
+      createFakeContact(),
+    );
     const updatedContacts = [...existingContacts, ...newContacts];
     await writeContacts(updatedContacts);
-    console.log(`Add ${number} contacts.`);
+    console.log(`Generated ${number} contacts.`);
   } catch (error) {
     console.error('Error:', error);
   }
 };
-
 generateContacts(5);

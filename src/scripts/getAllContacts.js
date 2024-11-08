@@ -1,4 +1,4 @@
-import { readContacts } from '../utils/readContacts.js'; // Імпортуємо функцію readContacts
+import { readContacts } from '../utils/readContacts.js';
 
 export const getAllContacts = async () => {
   try {
