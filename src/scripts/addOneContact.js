@@ -10,7 +10,7 @@ export const addOneContact = async () => {
     await writeContacts(contacts);
     console.log('New contact added successfully');
   } catch (err) {
-    console.error('Error handling contacts:', err);
+    console.error('Error:', err);
   }
 };
 addOneContact();
