@@ -1,7 +1,6 @@
-import path from 'node:path';
+import { PATH_DB } from '../constants/path.js';
 import fs from 'node:fs/promises';
 
-const PATH_DB = path.resolve('src/db/db.json');
 export const writeContacts = async (contacts) => {
   try {
     await fs.writeFile(PATH_DB, JSON.stringify(contacts, null, 2), 'utf8');
